@@ -1,11 +1,19 @@
 body {
     display: grid;
+    background-color: #f4f4f4;
 }
 
+h1 {
+    margin-left: 10px;
+}
+
+h2 {
+    margin-left: 10px;
+}
 
 .d1 {
     display: grid;
-    background-color: lightgray;
+    /*background-color: lightgray;*/
     border-radius: 10px;
     margin: 10px;
     padding: 5px;
@@ -21,8 +29,12 @@ body {
     margin: 10px;
 }
 
-.u1 {
+.cities_property_list {
     padding-left: 0px;
+}
+
+li {
+    list-style: none;
 }
 
 .l1 {
@@ -30,7 +42,6 @@ body {
     margin: 5px;
     border-radius: 5px;
     padding-right: 10px;
-    list-style-type: none;
     display: flex;
 
 }
@@ -45,19 +56,44 @@ body {
     margin: 10px 5px;
 }
 
-.top_d{
+.update{
     display: grid;
     grid-template-columns: 40% 60%;
 }
 
-
-
-.bottom_d {
-    display: grid;
-    grid-template-columns: 50% 50%;
+.update_button_desktop {
+    width: 170px;
+    height: 40px;
+    border-radius: 7px;
+    font-size: 10pt;
+    background-color: #f1fdfd;
+    border: none;
+    outline: none;
 }
 
-.main_d {
+.update_button_desktop:hover { background: #8affff; }
+.update_button_desktop:active { background: #24c7d6; }
+
+.update_button_mobile{
+    width: 25px;
+    height: 25px;
+    background-image: url("img/refresh.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    display: none;
+}
+
+.cities-list {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    padding: 0px;
+
+}
+
+.current_city {
     grid-template-columns: 50% 50%;
 
 }
@@ -67,7 +103,7 @@ body {
     font-size: xx-large;
 }
 
-.bottom_d .d1 .d2 img{
+.cities-list .d1 .d2 img{
     width: 50px;
     height: 50px;
 }
@@ -93,15 +129,15 @@ body {
     background-color: #f1fdfd;
     border: none;
     user-select: none;
+    outline: none;
 }
 
 .del:hover { background: #8affff; }
 .del:active { background: #24c7d6; }
 
 
-.chosen {
+.toolbar {
     display: grid;
-    background-color: lightgray;
     border-radius: 10px;
     margin: 10px;
     padding: 5px;
@@ -112,6 +148,7 @@ body {
     margin: 10px;
     border-radius: 10px;
     flex: auto;
+    outline: none;
 }
 
 .add {
@@ -122,6 +159,30 @@ body {
 .add button{
     margin: 10px;
     font-size: x-large;
+}
+
+.update {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 60%;
+}
+
+.current_city_weather {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.current_city_weather img{
+    width: 100px;
+    height: 100px;
+}
+
+.current_city_weather p{
+    font-size: 40pt;
+    color: dimgray;
+    margin-right: 10px;
 }
 
 @media screen and (min-width: 1024px) {
@@ -138,11 +199,23 @@ body {
 
 
 @media screen and (max-width: 750px) {
-    .main_d {
+    .current_city {
         grid-template-columns: 100%;
     }
 
-    .bottom_d {
+    .cities-list {
         grid-template-columns: 100%;
+    }
+
+    .toolbar {
+        grid-template-columns: 30% 70%;
+    }
+
+    .update_button_desktop{
+        display: none;
+    }
+
+    .update_button_mobile {
+        display: block;
     }
 }
