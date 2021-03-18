@@ -172,7 +172,9 @@ let addCity = function (weatherData, sectionId) {
 
     let loaders = cityElement.querySelectorAll(".loading");
     for (const loader of loaders) {
+        console.info(loaders)
         loader.classList.remove("loading");
+        loader.classList.add("loaded");
     }
 };
 
@@ -211,3 +213,4 @@ class OpenWeather {
 }
 
 let ow = new OpenWeather();
+
